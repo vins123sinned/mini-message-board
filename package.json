@@ -1,0 +1,29 @@
+{
+  "name": "mini-message-board",
+  "version": "1.0.0",
+  "description": "A fun Express project built using the EJS templating language and Model-View-Controller (MVC) design pattern",
+  "keywords": [
+    "express",
+    "ejs",
+    "mvc"
+  ],
+  "homepage": "https://github.com/vins123sinned/mini-message-board#readme",
+  "bugs": {
+    "url": "https://github.com/vins123sinned/mini-message-board/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vins123sinned/mini-message-board.git"
+  },
+  "license": "ISC",
+  "author": "Vinson",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0"
+  }
+}
