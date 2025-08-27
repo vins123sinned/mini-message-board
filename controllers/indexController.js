@@ -11,4 +11,8 @@ function getFormPage(req, res) {
   res.render("form");
 }
 
-export { getIndexPage, getFormPage };
+function createMessage(req, res) {
+  console.log('Hey!');
+}
+
+export { getIndexPage, getFormPage, createMessage };
