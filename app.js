@@ -4,6 +4,9 @@ import { indexRouter } from "./routes/indexRouter.js";
 
 const app = express();
 
+// parse form's url encoded data into req.body
+app.use(express.urlencoded({ extended: true }));
+
 // static path configuration
 const assetsPath = path.join(import.meta.dirname, "public");
 app.use(express.static(assetsPath));

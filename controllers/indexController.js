@@ -12,7 +12,7 @@ function getFormPage(req, res) {
 }
 
 function createMessage(req, res) {
-  console.log('Hey!');
+  res.send(req.body);
 }
 
 export { getIndexPage, getFormPage, createMessage };
