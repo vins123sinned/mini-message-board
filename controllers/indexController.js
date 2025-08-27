@@ -12,7 +12,10 @@ function getFormPage(req, res) {
 }
 
 function createMessage(req, res) {
-  res.send(req.body);
+  const { name, message } = req.body;
+
+  messages.push({ text: message, user: name, added: new Date() });
+  res.redirect("/");
 }
 
 export { getIndexPage, getFormPage, createMessage };
