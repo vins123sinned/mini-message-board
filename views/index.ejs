@@ -5,6 +5,14 @@
   </head>
   <body>
     <p>Testing 123...</p>
-    <p><%= variable %></p>
+    <ul>
+      <% messages.forEach((message) => { %>
+        <li>
+          <h2>From: <%= message.user %></h2>
+          <p><%= message.text %></p>
+          <p><%= message.added %></p>
+        </li>
+      <% }) %>
+    </ul>
   </body>
 </html>
