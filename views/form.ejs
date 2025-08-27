@@ -6,6 +6,20 @@
     <title>Create New Message</title>
   </head>
 <body>
-  <p>Hello there!</p>
+  <h1>Create New Message</h1>
+  <form method="POST" action="/new"> 
+    <p>Required fields are followed by <strong><span aria-label="required">*</span></strong></p>
+    <p class="form-field">
+      <label for="name">Name <strong><span aria-label="required">*</span></strong></label>
+      <input type="text" id="name" name="name" required>
+    </p>
+    <p class="form-field">
+      <label for="message">Message <strong><span aria-label="required">*</span></strong></label>
+      <input type="text" id="message" name="message" required>
+    </p>
+    <p class="form-field">
+      <button class="form-submit" type="submit">Send</button>
+    </p>
+  </form>
 </body>
 </html>
