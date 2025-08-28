@@ -1,6 +1,7 @@
 import express from "express";
 import path from "node:path";
 import { indexRouter } from "./routes/indexRouter.js";
+import { messageRouter } from "./routes/messageRouter.js";
 
 const app = express();
 
@@ -17,6 +18,7 @@ app.set("view engine", "ejs");
 
 // router configuration
 app.use("/", indexRouter);
+app.use("/messages", messageRouter);
 
 // error middlewares
 app.use((err, req, res, next) => {
