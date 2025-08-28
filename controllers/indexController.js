@@ -1,20 +1,23 @@
-import { messages } from "../db.js";
+import { getMessages, addMessage } from "../db.js";
 import { CustomNotFoundError } from "../errors/customNotFoundError.js";
 
-function getIndexPage(req, res) {
+async function getIndexPage(req, res) {
+  const messages = await getMessages();
+
   if (!messages) throw new CustomNotFoundError("Can't get messages");
 
-  res.render("index", { messages: messages });
+  res.render("index", { messages });
 }
 
 function getFormPage(req, res) {
   res.render("form");
 }
 
-function createMessage(req, res) {
+async function createMessage(req, res) {
   const { name, message } = req.body;
 
-  messages.push({ text: message, user: name, added: new Date() });
+  await addMessage(name, message);
+
   res.redirect("/");
 }
 
