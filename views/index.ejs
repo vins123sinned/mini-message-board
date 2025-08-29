@@ -7,16 +7,19 @@
     <link rel="stylesheet" href="/index.css">
   </head>
   <body>
-    <p>Testing 123...</p>
-    <ul>
-      <% messages.forEach((message) => { %>
-        <li>
-          <h2>From: <%= message.user %></h2>
-          <p><%= message.text %></p>
-          <p><%= message.added %></p>
-          <a href="/messages/<%= message.id %>">Open</a>
-        </li>
-      <% }) %>
-    </ul>
+    <%- include('header') %>
+    <section class="messages-section">
+      <ul class="messages">
+        <% messages.forEach((message) => { %>
+          <li class="message">
+            <a href="/messages/<%= message.id %>">
+              <h2><%= message.user %></h2>
+              <p class="message-text"><%= message.text %></p>
+              <p class="date-added"><%= message.added %></p>
+            </a>
+          </li>
+        <% }) %>
+      </ul>
+    </section>
   </body>
 </html>
