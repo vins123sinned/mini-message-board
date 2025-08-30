@@ -4,22 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create New Message</title>
+    <link rel="stylesheet" href="/index.css">
   </head>
 <body>
-  <h1>Create New Message</h1>
-  <form method="POST" action="/new"> 
-    <p>Required fields are followed by <strong><span aria-label="required">*</span></strong></p>
-    <p class="form-field">
-      <label for="name">Name <strong><span aria-label="required">*</span></strong></label>
-      <input type="text" id="name" name="name" required>
-    </p>
-    <p class="form-field">
-      <label for="message">Message <strong><span aria-label="required">*</span></strong></label>
-      <input type="text" id="message" name="message" required>
-    </p>
-    <p class="form-field">
-      <button class="form-submit" type="submit">Send</button>
-    </p>
-  </form>
+  <%- include('header') %>
+  <section class="form-section">
+    <form method="POST" action="/new" class="message-form">
+      <h2 class="form-heading">Create New Message</h2>
+      <p class="required-reminder">Required fields are followed by <strong><span aria-label="required" class="required-symbol">*</span></strong></p>
+      <p class="form-field">
+        <label for="name">Name <strong><span aria-label="required" class="required-symbol">*</span></strong></label>
+        <input type="text" id="name" name="name" required>
+      </p>
+      <p class="form-field">
+        <label for="message">Message <strong><span aria-label="required" class="required-symbol">*</span></strong></label>
+        <input type="text" id="message" name="message" required>
+      </p>
+      <p class="form-field">
+        <button class="form-submit" type="submit">Send</button>
+      </p>
+    </form>
+  </section>
 </body>
 </html>
