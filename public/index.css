@@ -11,6 +11,7 @@ body {
     "Open Sans",
     "Helvetica Neue",
     sans-serif;
+  background-color: #f7f7f7;
   padding: 0;
   margin: 0;
 }
@@ -20,6 +21,7 @@ header {
   justify-content: space-between;
   align-items: center;
 
+  background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
   padding: 0 1rem;
 }
@@ -50,6 +52,17 @@ button:hover {
   cursor: pointer;
 }
 
+/* header */
+header a {
+  color: #000;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.1s ease;
+}
+
+header a:hover {
+  border-bottom-color: #000;
+}
+
 /* index */
 
 .new-link {
@@ -67,6 +80,7 @@ button:hover {
 .messages-section {
   display: flex;
   justify-content: center;
+  margin: 1rem;
 }
 
 .message {
@@ -74,14 +88,15 @@ button:hover {
   background-color: #14213d;
   color: #fff;
   border-radius: 5px;
-  width: clamp(250px, 80vw, 800px);
+  width: clamp(250px, 75vw, 800px);
   padding: 0.25rem 1rem;
   margin: 0.5rem;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .message:hover {
   transform: scale(1.01);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .message-link {
@@ -116,21 +131,6 @@ button:hover {
   padding: 0 !important;
 }
 
-@media (min-width: 600px) {
-  header {
-    padding: 0 2rem;
-  }
-
-  .message {
-    padding: 0.25rem 2rem;
-    margin: 1rem;
-  }
-
-  .message *:not(.message-link) {
-    padding: 0 2rem 0 0;
-  }
-}
-
 /* form */
 .form-section,
 .message-section {
@@ -142,11 +142,18 @@ button:hover {
 
 .message-form,
 .message-container {
-  background-color: #000;
+  background-color: #14213d;
   color: #fff;
   border-radius: 5px;
   width: clamp(300px, 60vw, 600px);
   padding: 0.5rem;
+}
+
+.message-form {
+  position: relative;
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 .form-heading,
@@ -188,21 +195,50 @@ button:hover {
   font-weight: 600;
   background-color: #14213d;
   color: #fca311;
-  border: 1px solid #ffffff;
+  border: 1px solid #e5e5e5;
   padding: 0.25rem 0.5rem;
   margin-top: 0.75rem;
 }
 
 .form-submit:hover {
-  background-color: #24241d;
+  background-color: #283758;
 }
 
 /* message */
 .message-container {
   position: relative;
-  background-color: #000;
+  background-color: #14213d;
   color: #fff;
   padding: 1rem;
+}
+
+.message-section {
+  margin: 1rem;
+}
+
+.message-container::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  right: -15px;
+  bottom: -15px;
+  background: linear-gradient(
+    155deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(20, 33, 61, 1) 41%,
+    rgba(255, 215, 0, 0.94) 81%
+  );
+  border-radius: 15px;
+  filter: blur(20px);
+  opacity: 0.8;
+  z-index: -1;
+  transition: all 0.2s ease;
+}
+
+.message-container:hover::before {
+  filter: blur(35px);
+  opacity: 1;
 }
 
 .message-container h2 {
@@ -211,4 +247,24 @@ button:hover {
 
 .message-container .date-added {
   display: block;
+}
+
+@media (min-width: 600px) {
+  header {
+    padding: 0 2rem;
+  }
+
+  .message {
+    padding: 0.25rem 2rem;
+    margin: 1rem;
+  }
+
+  .message *:not(.message-link) {
+    padding: 0 2rem 0 0;
+  }
+
+  .required-reminder {
+    text-align: start;
+    margin-left: 1.8rem;
+  }
 }
