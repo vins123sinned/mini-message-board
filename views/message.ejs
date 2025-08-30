@@ -4,10 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= message.user %>'s Message</title>
+    <link rel="stylesheet" href="/index.css">
   </head>
   <body>
-    <h1><%= message.text %></h1>
-    <p><%= message.user %></p>
-    <p><%= message.added %></p>
+    <%- include('header') %>
+    <section class="message-section">
+      <div class="message-container">
+        <h2><%= message.text %></h2>
+        <p class="message-text"><%= message.user %></p>
+        <p class="date-added"><%= message.added %></p>
+      </div>
+    </section>
   </body>
 </html>

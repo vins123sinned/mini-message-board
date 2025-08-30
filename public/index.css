@@ -132,14 +132,16 @@ button:hover {
 }
 
 /* form */
-.form-section {
+.form-section,
+.message-section {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 80vh;
 }
 
-.message-form {
+.message-form,
+.message-container {
   background-color: #000;
   color: #fff;
   border-radius: 5px;
@@ -152,7 +154,8 @@ button:hover {
   text-align: center;
 }
 
-.form-heading {
+.form-heading,
+.message-container h2 {
   color: #fca311;
 }
 
@@ -192,4 +195,20 @@ button:hover {
 
 .form-submit:hover {
   background-color: #24241d;
+}
+
+/* message */
+.message-container {
+  position: relative;
+  background-color: #000;
+  color: #fff;
+  padding: 1rem;
+}
+
+.message-container h2 {
+  margin-top: 0.5rem;
+}
+
+.message-container .date-added {
+  display: block;
 }
