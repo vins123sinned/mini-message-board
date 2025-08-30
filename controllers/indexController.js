@@ -1,5 +1,5 @@
 import { getMessages, addMessage } from "../db.js";
-import { CustomNotFoundError } from "../errors/customNotFoundError.js";
+import { CustomNotFoundError } from "../errors/CustomNotFoundError.js";
 
 async function getIndexPage(req, res) {
   const messages = await getMessages();

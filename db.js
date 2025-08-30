@@ -1,14 +1,16 @@
+import { format } from "date-fns";
+
 const messages = [
   {
     text: "Hello, world!",
     user: "First computer",
-    added: new Date(),
+    added: format(new Date(), "EEEE MMM d, yyyy h:mm a OOOO"),
     id: crypto.randomUUID(),
   },
   {
     text: "There's a moth in my computer!",
     user: "Harvard",
-    added: new Date(),
+    added: format(new Date(), "EEEE MMM d, yyyy h:mm a OOOO"),
     id: crypto.randomUUID(),
   },
 ];
@@ -27,7 +29,7 @@ async function addMessage(name, message) {
   return messages.push({
     text: message,
     user: name,
-    added: new Date(),
+    added: format(new Date(), "EEEE MMM d, yyyy h:mm a OOOO"),
     id: crypto.randomUUID(),
   });
 }
