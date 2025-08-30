@@ -1,5 +1,16 @@
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
   padding: 0;
   margin: 0;
 }
@@ -10,12 +21,13 @@ header {
   align-items: center;
 
   box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
-  padding: 0 2rem;
+  padding: 0 1rem;
 }
 
 h1 {
-  font-family: 'Times New Roman', Times, serif;
-  padding: 1rem;
+  font-family: "Times New Roman", Times, serif;
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  padding: 1rem 0.25rem;
   margin: 0;
 }
 
@@ -43,14 +55,18 @@ a {
 }
 
 .messages-section {
-  margin: 1.5rem 5rem;
+  display: flex;
+  justify-content: center;
 }
 
 .message {
+  position: relative;
   background-color: #14213d;
   color: #fff;
   border-radius: 5px;
-  margin: 1rem;
+  width: clamp(250px, 80vw, 800px);
+  padding: 0.25rem 1rem;
+  margin: 0.5rem;
   transition: transform 0.3s ease;
 }
 
@@ -58,18 +74,49 @@ a {
   transform: scale(1.01);
 }
 
-.message a {
-  display: block;
-  width: 100%;
-  height: 100%;
-  padding: 0.25rem 2rem;
+.message-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
-.message h2 {
+.message *:not(.message-link) {
+  isolation: isolate;
+  width: fit-content;
+  z-index: 999;
+}
+
+.message-author {
   color: #fca311;
+  word-break: break-all;
   margin: 0.5rem 0;
 }
 
+.message-text {
+  margin-bottom: 2.5rem;
+}
+
 .date-added {
+  position: absolute;
+  right: 1rem;
+  bottom: 0;
   font-size: 0.75rem;
+  padding: 0 !important;
+}
+
+@media (min-width: 600px) {
+  header {
+    padding: 0 2rem;
+  }
+
+  .message {
+    padding: 0.25rem 2rem;
+    margin: 1rem;
+  }
+
+  .message *:not(.message-link) {
+    padding: 0 2rem 0 0;
+  }
 }

@@ -12,11 +12,10 @@
       <ul class="messages">
         <% messages.forEach((message) => { %>
           <li class="message">
-            <a href="/messages/<%= message.id %>">
-              <h2><%= message.user %></h2>
-              <p class="message-text"><%= message.text %></p>
-              <p class="date-added"><%= message.added %></p>
-            </a>
+            <a href="/messages/<%= message.id %>" class="message-link"></a>
+            <h2 class="message-author"><%= message.user %></h2>
+            <p class="message-text"><%= message.text %></p>
+            <p class="date-added"><%= message.added %></p>
           </li>
         <% }) %>
       </ul>
