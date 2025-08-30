@@ -133,7 +133,8 @@ header a:hover {
 
 /* form */
 .form-section,
-.message-section {
+.message-section,
+.error-section {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -162,7 +163,7 @@ header a:hover {
 }
 
 .form-heading,
-.message-container h2 {
+.message-section .message-text {
   color: #fca311;
 }
 
@@ -247,6 +248,25 @@ header a:hover {
 
 .message-container .date-added {
   display: block;
+}
+
+/* error */
+.error-section {
+  color: #ff0000;
+}
+
+.error-container {
+  text-align: center;
+}
+
+.error-link {
+  display: block;
+  text-decoration: underline;
+  color: #000;
+}
+
+.error-link:hover {
+  color: #14213d;
 }
 
 @media (min-width: 600px) {

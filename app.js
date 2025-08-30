@@ -19,10 +19,20 @@ app.set("view engine", "ejs");
 // router configuration
 app.use("/", indexRouter);
 app.use("/messages", messageRouter);
+app.get("/{*splat}", (req, res) =>
+  res.status(404).render("404", { message: "Unknown route" }),
+);
 
 // error middlewares
 app.use((err, req, res, next) => {
+  if (res.headersSent) return next(err);
   console.error(err);
+
+  if (err.statusCode && err.statusCode === 404) {
+    res.status(404).render("404", { message: err.message });
+    return;
+  }
+
   res.status(err.statusCode || 500).send(err.message);
 });
 
