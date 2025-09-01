@@ -5,6 +5,12 @@ This project follows the **Model-View-Controller (MVC)** design pattern and was 
 
 <img width="1911" height="877" alt="image" src="https://github.com/user-attachments/assets/fdb009b9-2fad-4c4c-afed-1e573fa4c952" />
 
+<p align="center">
+  <a href="https://mini-message-board-production-5762.up.railway.app/">
+    View live site
+  </a>
+</p>
+
 ## Features
 Users can:
 - View a list of all messages
