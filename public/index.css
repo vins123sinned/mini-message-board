@@ -205,6 +205,12 @@ header a:hover {
   background-color: #283758;
 }
 
+.errors {
+  list-style-type: disc;
+  color: #fa0202;
+  margin-left: 2.6rem;
+}
+
 /* message */
 .message-container {
   position: relative;

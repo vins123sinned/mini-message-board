@@ -9,7 +9,7 @@
 <body>
   <%- include('header') %>
   <section class="form-section">
-    <form method="POST" action="/new" class="message-form">
+    <form method="POST" action="/new" class="message-form" novalidate>
       <h2 class="form-heading">Create New Message</h2>
       <p class="required-reminder">Required fields are followed by <strong><span aria-label="required" class="required-symbol">*</span></strong></p>
       <p class="form-field">
@@ -20,6 +20,7 @@
         <label for="message">Message <strong><span aria-label="required" class="required-symbol">*</span></strong></label>
         <input type="text" id="message" name="message" required>
       </p>
+      <%- include('partials/errors.js') %>
       <p class="form-field">
         <button class="form-submit" type="submit">Send</button>
       </p>
