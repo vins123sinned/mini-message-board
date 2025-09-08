@@ -1,4 +1,4 @@
-import { getMessages, addMessage } from "../db.js";
+import { getMessages, addMessage } from "../db/queries.js";
 import { CustomNotFoundError } from "../errors/CustomNotFoundError.js";
 
 async function getIndexPage(req, res) {
@@ -14,9 +14,9 @@ function getFormPage(req, res) {
 }
 
 async function createMessage(req, res) {
-  const { name, message } = req.body;
+  const { username, message } = req.body;
 
-  await addMessage(name, message);
+  await addMessage(username, message);
 
   res.redirect("/");
 }

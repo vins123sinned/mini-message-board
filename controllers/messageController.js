@@ -1,4 +1,4 @@
-import { getMessageById } from "../db.js";
+import { getMessageById } from "../db/queries.js";
 import { CustomNotFoundError } from "../errors/CustomNotFoundError.js";
 
 async function getMessagePage(req, res) {

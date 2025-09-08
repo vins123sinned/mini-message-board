@@ -13,7 +13,7 @@
         <% messages.forEach((message) => { %>
           <li class="message">
             <a href="/messages/<%= message.id %>" class="message-link"></a>
-            <h2 class="message-author"><%= message.user %></h2>
+            <h2 class="message-author"><%= message.username %></h2>
             <p class="message-text"><%= message.text %></p>
             <p class="date-added"><%= message.added %></p>
           </li>

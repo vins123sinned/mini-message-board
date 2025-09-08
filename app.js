@@ -1,3 +1,4 @@
+import "dotenv/config";
 import express from "express";
 import path from "node:path";
 import { indexRouter } from "./routes/indexRouter.js";
@@ -19,6 +20,7 @@ app.set("view engine", "ejs");
 // router configuration
 app.use("/", indexRouter);
 app.use("/messages", messageRouter);
+app.get("/favicon-ico", (req, res) => res.status(204));
 app.get("/{*splat}", (req, res) =>
   res.status(404).render("404", { message: "Unknown route" }),
 );
